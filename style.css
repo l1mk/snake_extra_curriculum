@@ -1,4 +1,5 @@
 .grid {
+    background-color: black;
     width: 400px;
     height: 400px;
     display: flex;
@@ -12,10 +13,27 @@
     height: 40px;
 }
 
-.snake {
-    background-color: blue;
+.pkb1 {
+    background-image: url('images/pokeball1.png');
+    background-size: cover;
+}
+
+.pkb2 {
+    background-image: url('images/pokeball2.png');
+    background-size: cover;
+}
+
+.pkb3 {
+    background-image: url('images/pokeball3.png');
+    background-size: cover;
+}
+
+.pkb4 {
+    background-image: url('images/pokeball4.png');
+    background-size: cover;
 }
 
 .apple {
-    background-color: orange;
+    background-image: url('images/jiggly.png');
+    background-size: cover;
 }
