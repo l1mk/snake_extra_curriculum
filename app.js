@@ -3,6 +3,9 @@ const squares = document.querySelectorAll('.grid div')
 const scoreDisplay = document.querySelector('#result')
 const timerDisplay = document.querySelector('#timer')
 const startBtn = document.querySelector('#start')
+const instBtn = document.querySelector('#inst-Btn')
+const instruction = document.querySelector('#instructions')
+const top = document.querySelector('#top')
 
 const width = 10
 let currentIndex = 0 //first div 
@@ -14,6 +17,7 @@ let score = 0
 let intervalTime = 0
 let interval = 0
 let timer = 0
+let topScore = 0
 
 function startGame(){
     currentSnake.forEach(index => squares[index].classList.remove('pkb1'))
@@ -52,6 +56,10 @@ function moveOutcomes(){
         squares[currentSnake[0] + direction].classList.contains('pkb4')
     ){
         alert('Game Over, Final score is ' + score)
+        if (topScore < score){
+            topScore = score
+            top.innerHTML = `${topScore} by Player1`
+        }
         return clearInterval(interval) //gameover
     }
 
@@ -66,6 +74,8 @@ function moveOutcomes(){
     //deal with apple
     if (squares[currentSnake[0]].classList.contains('apple')) {
         squares[currentSnake[0]].classList.remove('apple')
+        squares[currentSnake[0]].classList.add('effect')
+        setTimeout(() => squares[currentSnake[0]].classList.remove('effect'), 200)
         squares[tail].classList.add(randomPkb())
         currentSnake.push(tail)
         randomApple()
@@ -108,5 +118,14 @@ function control(e) {
 
 document.addEventListener('keyup', control)
 startBtn.addEventListener('click', startGame)
+instBtn.addEventListener('click', () =>{
+    if (instBtn.innerHTML === 'Instructions'){
+     instBtn.innerHTML = 'Hide'
+     instruction.style.display = 'block'
+    } else if (instBtn.innerHTML === 'Hide'){
+     instBtn.innerHTML = 'Instructions'
+     instruction.style.display = 'none'  
+    }
+ })
 
 }) 

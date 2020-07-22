@@ -7,14 +7,16 @@
     <title>Snake</title>
 </head>
 <body>
+    <div class="header">
+        <h1>Jiggly</h1>
+        <nav>Top Score: <span id="top">None</span></nav>
+    </div>
+    <h3>Score: </h3><span id="result">0</span>
+    <h3>Timer: </h3><span id="timer">30</span>
 
-
-    <button id="start">Start/Reset</button>
     <br>
-    <h3><div id="score">Score: <span id="result">0</span></div></h3>
-    <h3><div>Timer: <span id="timer">0</span></div></h3>
     <br>
-
+    <div class="border">
     <div class="grid">
         <div></div>
         <div></div>
@@ -118,6 +120,15 @@
         <div></div>
         <div></div>
     </div>
+</div>
+<br>
+    <button id="start">Start/Reset</button>
+    <button id="inst-Btn">Instructions</button>
+<div id="instructions">
+<p>
+Use the arrow key to move the pokeball to catch Jigglypuufs, if you hit a wall or yourselve the game is over. Earn points and grow bigger the more Jigglys you capture
+</p>
+</div>
 
 </body>
 </html>
