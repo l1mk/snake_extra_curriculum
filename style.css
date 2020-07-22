@@ -1,12 +1,15 @@
 .header {
-    padding: 15px;
+    padding: 10px;
     background-color: #e799de;
+    border: solid 5px;
     color: white;
     font-size: 30px;
 }
 nav {
     float: right;
-    font-size: 15px
+    font-size: 15px;
+    position: relative;
+    bottom: 20px 
 }
 h1 {
     align-self: center;
